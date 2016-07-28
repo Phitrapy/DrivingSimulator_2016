@@ -1,0 +1,15 @@
+===== DRIVING SIMULATOR =====
+
+--- Homing on #1 ---
+
+ // Séquence habituelle:
+1R400006C0407C
+1n000000000081
+
+ // Pré-Homming:
+1R400007806084
+
+ // Homming:
+1o070000000079
+ 
+ 

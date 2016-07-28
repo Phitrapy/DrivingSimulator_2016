@@ -1,0 +1,32 @@
+; ISA Tools Menu Option
+M=-------------------------
+C= 
+; Run TIC based WISaKER menu option
+M=Run TIC based WISaKER
+C=\ISAWIN\COM\WISAKER.BAT %A \ISAWIN \ISAWIN\Target
+; End TGT Tools Menu Option 3.20
+; TIO Tools Menu Option 3.20
+M=-------------------------
+C= 
+; Build 'C' WISaKER menu option
+M=Build 'C' WISaKER
+C=\ISAWIN\COM\makwkerc.BAT %A \ISAWIN \ISAWIN\Target
+; Run 'C' WISaKER menu option
+M=Run 'C' WISaKER
+C=\ISAWIN\COM\WISAKERc.BAT %A \ISAWIN \ISAWIN\Target
+M=-------------------------
+C= 
+; Transfer ISaWIN C-Function to TARGET menu option
+M=Transfer ISaWIN C-Function to TARGET
+C=\ISAWIN\COM\CLIBTRG.BAT
+; Transfer Termi-BUS Library to TARGET menu option
+M=Transfer Termi-BUS Library to TARGET
+C=\ISAWIN\COM\TBUSTRG.BAT
+M=-------------------------
+C= 
+; Back-UP TARGET C-Function to A: menu option
+M=Back-UP TARGET C-Function to A:
+C=\ISAWIN\COM\CLIBBAK.BAT
+; Restore TARGET C-Function from A: menu option
+M=Restore TARGET C-Function from A:
+C=\ISAWIN\COM\CLIBUBK.BAT

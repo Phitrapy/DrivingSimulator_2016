@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UART_test.CSharp", "UART_test.CSharp.csproj", "{0A18EDC3-F1AF-CDFE-F3CE-CD32AB8574EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A18EDC3-F1AF-CDFE-F3CE-CD32AB8574EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A18EDC3-F1AF-CDFE-F3CE-CD32AB8574EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A18EDC3-F1AF-CDFE-F3CE-CD32AB8574EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A18EDC3-F1AF-CDFE-F3CE-CD32AB8574EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

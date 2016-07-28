@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ActuatorData.cs">
+    <Files>
+      <File FileName="Assets\Scripts\UnitySerialPort.cs" Line="62" Column="36" />
+      <File FileName="Assets\ActuatorData.cs" Line="19" Column="26" />
+      <File FileName="Assets\script_cube.cs" Line="47" Column="59" />
+      <File FileName="Assets\Scripts\GUIManager.cs" Line="10" Column="28" />
+      <File FileName="Assets\CarMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\convert.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
