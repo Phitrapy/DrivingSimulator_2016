@@ -1,0 +1,193 @@
+
+
+reverse position :
+0o07000000007A
+02306F30373030303030303030374103   : 02...(STX) et ...03(ETX)
+
+Rentrez votre valeur en hexa à cette adresse pour récupérer la valeur en string :
+http://string-functions.com/hex-string.aspx
+
+
+TEST réussi :
+
+Dans Output Data (to COM port) :
+0o07000000007A
+02306F30373030303030303030374103
+
+
+retourne :
+0o07008090044 1ere fois  (simulateur en mouvement sur l'axe 0)
+0o070080F0037 2eme fois
+
+
+TEST 2 : axe 1      marche pas
+
+1o070000000079     
+
+
+TEST 3 : 131 excel  marche pas
+
+0T400000400094
+
+
+TEST 4 : 31 excel
+
+0T400000400094
+
+
+------------------------------------------------------
+
+
+0aFFFFE57D0002
+0aFFFFFFF10002
+
+
+0o07000000007A
+
+1R400007C0007F
+1o070000000079
+
+
+2o070000000078
+
+1o07000000007A
+2o07000000007A
+1o07000000007A
+
+test positions
+
+
+1
+02306146464646463834303030
+
+2
+
+0aFFFFF0810018
+
+
+5
+0aFFFFD9430013   marche pas
+
+
+17,5  marche pas
+0aFFFFFF260003
+
+400pulses   marche pas
+0aFFFFF1900017
+ali
+0aFFFFFFDA00E6
+
+800pulses
+0aFFFFFCE000F9
+
+
+100
+0aFFFFFF9C00EF
+
+300
+0aFFFFFED400F4
+
+600
+0aFFFFFDA800F4
+
+1000
+0aFFFFFC180005
+
+5000
+0aFFFFEC780000
+
+
+Vrai milieu
+0aFFFFD8F00005
+
+vrai extrem 1
+0aFFFFB1E0000F
+1aFFFFB1E0000F2aFFFFB1E0000F
+
+
+IPHONE
+
+0
+0n000000000082
+0o07000000007A
+0n000000000082
+0R400007C00080
+
+1
+1n000000000081
+1R400007C0007F
+1o070000000079
+1n000000000081
+
+2
+2n000000000080
+2o070000000078
+2n000000000080
+
+
+
+
+
+
+---------------SEQUENCES PROPRES---------------
+
+0o07000000007A
+0aFFFFD8F00005
+0aFFFFB1E0000F
+-----------------------------
+
+1o070000000079
+1aFFFFD8F00004
+1aFFFFB1E0000E
+-------------------------
+
+2o070000000078
+2aFFFFD8F00003
+2aFFFFB1E0000D
+
+
+--------------commandes du dernier espoir------------
+(test de toutes les combinaisons possibles de homing sur l'axe 1)
+
+1o000000000080
+1o01000000007F
+1o02000000007E
+1o03000000007D
+1o04000000007C
+1o05000000007B
+1o06000000007A
+1o070000000079
+1o080000000078
+1o090000000077
+1o0A000000006F
+
+(aucune ne marche...)
+
+---------------test autre num axe------------
+
+3o070000000077
+4o070000000076
+5o070000000075
+
+(aucune ne marche...)
+
+------------------test homing en deux string--------------
+
+1R400006C0407C
+1n000000000081
+1R400007806084
+1o070000000079
+
+(marche pas...)
+
+
+
+-------------------------test venki-------------------
+
+0aFFFFE57D0002
+1aFFFFE57D0001
+2aFFFFE57D0000
+
+
+
+
