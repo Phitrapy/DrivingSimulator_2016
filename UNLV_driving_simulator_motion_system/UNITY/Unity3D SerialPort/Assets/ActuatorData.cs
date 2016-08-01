@@ -129,12 +129,12 @@ public class ActuatorData : MonoBehaviour {
         // know it is instantiated before this call.
         unitySerialPort = UnitySerialPort.Instance;
 
-        unitySerialPort.BuildInitSequence();
-        StartCoroutine(unitySerialPort.SendInitSequence(0, 320));//unitySerialPort.getInitSequenceLength()));
-        //setAxe(_Axe);
-        //S_GUIManager.OutputString = initialPositionsAxes[_axe];
-        //S_GUIManager.sendData ();
-        
+        //unitySerialPort.BuildInitSequence();
+        //StartCoroutine(unitySerialPort.SendInitSequence(0, 320));//unitySerialPort.getInitSequenceLength()));
+        setAxe(_Axe);
+        S_GUIManager.OutputString = initialPositionsAxes[_axe];
+        S_GUIManager.sendData();
+
         initAxes = false;
 
     }

@@ -933,10 +933,15 @@ public class UnitySerialPort : MonoBehaviour
             if (SerialPort.IsOpen)
             {
                 // Read serial data until a '\n' character is recieved
-                string rData = SerialPort.ReadLine();
+                //string rData = SerialPort.ReadLine();
 
                 // Read serial data until a '\u03' (ETX) character is recieved
                 //string rData = SerialPort.ReadTo("");
+
+                // Another attempt
+                SerialPort.Read(buf, sum, 16 - sum); //
+                string rData = ByteToHexBitFiddle(buf);
+
 
                 // If the data is valid then do something with it
                 if (rData != null && rData != "")

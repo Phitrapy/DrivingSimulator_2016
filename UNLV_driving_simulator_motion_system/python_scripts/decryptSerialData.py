@@ -1,25 +1,31 @@
-﻿def main():
-	nomFichier = "init_tbvst.txt";
-	#nomFichier = input("Nom du fichier à décrypter : ")
+﻿#	BY Clement BEGNAUD - 07/25/2016
+#	
+#	This script reads a "SerialPortMonitor Dump View record"
+#	and builds a new file which contains only the serial requests sent.
+#
+
+
+def main():
+	#inputName = "init_tbvst.txt";
+	inputName = input("Name of the file to read : ")
 	mode = 0
-	mode = input("Numéro du mode : (1: Ecriture, 2: Lecture)")
-	type(mode)
+	mode = input("Mode number : (1: Write, 2: Read)")
 	if (mode==1):
-		print("Mode choisi : Ecriture")
+		print("Chosen mode : Write")
 		mode = "Ecriture"
 	if (mode==2):
-		print("Mode choisi : Lecture")
+		print("Chosen mode : Read")
 		mode = "Lecture"
 	print(type(mode))
-	decrypt(nomFichier, mode)
+	decrypt(inputName, mode)
 	clean()
 	
 	print("Fin du programme")
 
-def decrypt(nomFichier, mode):
+def decrypt(inputName, mode):
 	readIt = False
 	dest = open("buffer.txt", 'w')
-	f = open(nomFichier,'r')
+	f = open(inputName,'r')
 	for line in f:
 		request = ""
 		if (readIt):
@@ -31,7 +37,6 @@ def decrypt(nomFichier, mode):
 					request = '\u0002' + line[55:-3] + '\u0003'
 		if (line.find(mode) == 1):
 			readIt = True;
-		#print(request)
 		dest.write('\n' + request)
 	f.close()
 	dest.close()

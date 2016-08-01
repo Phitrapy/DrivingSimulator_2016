@@ -1,0 +1,11 @@
+//////////////////////////////////////////////////////////////////////////
+//
+//      Common Variables for Termi-BUS SIO ISaGRAF Function Libraly
+//
+//////////////////////////////////////////////////////////////////////////
+#include "TBUSTYP.H"
+#include "TBUSVAR.H"
+
+struct TermiBUS_var TermiBUS[ 16 ]; // State Variables of Axis
+struct TermiBUS_sio TermiBUS_com;   // Common State Variables
+
