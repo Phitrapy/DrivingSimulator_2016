@@ -1,8 +1,0 @@
-C:\Users\geoff\Documents\Geoffrey\USA_2016\ULVN\PROJET\DOUILLE\protocol\Dyadic_TestWrapper_CSHARP\TestDyadicWrapper\TestDyadicWrapper\obj\Debug\TestDyadicWrapper.exe
-C:\Users\geoff\Documents\Geoffrey\USA_2016\ULVN\PROJET\DOUILLE\protocol\Dyadic_TestWrapper_CSHARP\TestDyadicWrapper\TestDyadicWrapper\obj\Debug\TestDyadicWrapper.pdb
-C:\Users\geoff\Documents\Geoffrey\USA_2016\ULVN\PROJET\DOUILLE\protocol\Dyadic_TestWrapper_CSHARP\TestDyadicWrapper\TestDyadicWrapper\bin\Debug\TestDyadicWrapper.exe
-C:\Users\geoff\Documents\Geoffrey\USA_2016\ULVN\PROJET\DOUILLE\protocol\Dyadic_TestWrapper_CSHARP\TestDyadicWrapper\TestDyadicWrapper\bin\Debug\TestDyadicWrapper.pdb
-C:\Users\geoff\Documents\Geoffrey\USA_2016\ULVN\PROJET\DOUILLE\protocol\Dyadic_TestWrapper_CSHARP\TestDyadicWrapper\TestDyadicWrapper\obj\Debug\TestDyadicWrapper.csprojResolveAssemblyReference.cache
-C:\Users\geoff\Documents\Geoffrey\USA_2016\ULVN\PROJET\DOUILLE\protocol\Dyadic_TestWrapper_CSHARP\TestDyadicWrapper\TestDyadicWrapper\obj\Debug\TestDyadicWrapper.Form1.resources
-C:\Users\geoff\Documents\Geoffrey\USA_2016\ULVN\PROJET\DOUILLE\protocol\Dyadic_TestWrapper_CSHARP\TestDyadicWrapper\TestDyadicWrapper\obj\Debug\TestDyadicWrapper.Properties.Resources.resources
-C:\Users\geoff\Documents\Geoffrey\USA_2016\ULVN\PROJET\DOUILLE\protocol\Dyadic_TestWrapper_CSHARP\TestDyadicWrapper\TestDyadicWrapper\obj\Debug\TestDyadicWrapper.csproj.GenerateResource.Cache
