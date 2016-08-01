@@ -1,0 +1,17 @@
+; TGT Tools Menu Option 3.20
+M=-------------------------
+C= 
+; Run TIC based WISaKER menu option
+M=Run TIC based WISaKER
+!WISAKER.BAT %A
+; End TGT Tools Menu Option 3.20
+; TIO Tools Menu Option 3.20
+M=-------------------------
+C= 
+; Build 'C' WISaKER menu option
+M=Build 'C' WISaKER
+!makwkerc.BAT %A
+; Run 'C' WISaKER menu option
+M=Run 'C' WISaKER
+!WISAKERc.BAT %A
+; End TIO Tools Menu Option 3.20

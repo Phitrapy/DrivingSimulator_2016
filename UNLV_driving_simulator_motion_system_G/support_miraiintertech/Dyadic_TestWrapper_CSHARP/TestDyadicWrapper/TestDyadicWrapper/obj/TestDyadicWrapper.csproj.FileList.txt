@@ -1,0 +1,8 @@
+bin\Debug\TestDyadicWrapper.exe
+bin\Debug\TestDyadicWrapper.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\TestDyadicWrapper.Properties.Resources.resources
+obj\Debug\TestDyadicWrapper.csproj.GenerateResource.Cache
+obj\Debug\TestDyadicWrapper.exe
+obj\Debug\TestDyadicWrapper.pdb
+obj\Debug\TestDyadicWrapper.Form1.resources
