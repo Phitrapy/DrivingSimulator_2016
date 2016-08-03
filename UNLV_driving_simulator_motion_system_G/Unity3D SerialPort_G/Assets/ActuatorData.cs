@@ -3,17 +3,19 @@ using System.Collections;
 using System.Text;
 
 public class ActuatorData : MonoBehaviour {
-	
+
+    const float TIME_INTERVAL = 0.02f;
+
 	public float timer = 0f;
 	public bool simulatorGOO = false;
 	public bool usePulses = true;
-	public bool initAxes = true;
+	public bool initAxiss = true;
 
-	public enum Axe{X = 0, Y = 1, Z = 2};
-	public Axe[] axe_raw = new Axe[] {Axe.X, Axe.Y, Axe.Z};
+	public enum Axis{X = 0, Y = 1, Z = 2};
+	public Axis[] axe_raw = new Axis[] {Axis.X, Axis.Y, Axis.Z};
 	
-	public string[] initialPositionsAxes = new string[] {""+STX+"0o07000000007A"+ETX,""+STX+"1o070000000079"+ETX,""+STX+"2o070000000078"+ETX};
-	public Axe _Axe = Axe.X;
+	public string[] initialPositionsAxiss = new string[] {""+STX+"0o07000000007A"+ETX,""+STX+"1o070000000079"+ETX,""+STX+"2o070000000078"+ETX};
+	public Axis _Axis = Axis.X;
 	public byte _axe = 0;
 	public enum Command{a,o};
 	public Command _Command = Command.a;
@@ -68,17 +70,6 @@ public class ActuatorData : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
-		//if(Input.GetKeyDown(KeyCode.Space)){
-				//init ();
-
-		//}
-
-		/*if (Input.GetKey (KeyCode.RightArrow)){
-				//classSerialPort.OpenSerialPort (); //vrai
-				//classSerialPort.SerialPort.Open (); //ajout
-				ouvrirPort();
-		}*/
 		
 		if (Input.GetKey (KeyCode.Space)) {
 				init ();	
@@ -93,83 +84,39 @@ public class ActuatorData : MonoBehaviour {
 
 		///// FIN RECUPERATION ///
 
-		//Debug.Log ("from ActuatorsData.cs : DegreePosition " + DegreePosition);
-
-		//if(Input.GetKeyUp(KeyCode.UpArrow)){
-				//simulatorGOO = true;
-
-		//}
-
-				// ANCIEN TIMER TEST SUR UN SEUL AXE
-
-				/*if (simulatorGOO) {
-						timer += Time.fixedDeltaTime;
-
-						createRaw0 ();
-						if (timer > 0.8f) {
-								
-
-								S_GUIManager.OutputString = raw;
-								S_GUIManager.sendData ();
-								timer = 0f;
-						} 
-
-
-
-				} */
-						
-		
 		///////////////////////////////////////////////// à ajouter
 		// gestion du nouveau timer
 
 		if (simulatorGOO) {
-			timer += Time.deltaTime;
+			timer += Time.fixedDeltaTime;
 				
-
-						if (timer <= 0.4f) {
-								createRaw0 ();
-								S_GUIManager.OutputString = raw;
-								S_GUIManager.sendData ();
+			if (timer <= TIME_INTERVAL) {
+					createRaw0 ();
+					S_GUIManager.OutputString = raw;
+					S_GUIManager.sendData ();
 								
-						} else if (timer > 0.4f && timer <= 0.8f) {
-								createRaw1 ();
-								S_GUIManager.OutputString = raw;
-								S_GUIManager.sendData ();
+			} else if (timer > TIME_INTERVAL && timer <= 2 * TIME_INTERVAL) {
+					createRaw1 ();
+					S_GUIManager.OutputString = raw;
+					S_GUIManager.sendData ();
 
-						} else if (timer > 0.8f && timer <= 1.2f) {
-								createRaw2 ();
-								S_GUIManager.OutputString = raw;
-								S_GUIManager.sendData ();
+			} else if (timer > 2 * TIME_INTERVAL && timer <= 3 * TIME_INTERVAL) {
+					createRaw2 ();
+					S_GUIManager.OutputString = raw;
+					S_GUIManager.sendData ();
 
-						}		
-						else {
-								timer = 0f;
-						}
-
-				}  
-
-		/*Debug.Log ("DegreePosition0  " + DegreePosition0);
-		Debug.Log ("DegreePosition1  " + DegreePosition1);
-		Debug.Log ("DegreePosition2  " + DegreePosition2);
-
-		Debug.Log ("PulsesRev0  " + PulsesRev0);
-		Debug.Log ("PulsesRev1  " + PulsesRev1);
-		Debug.Log ("PulsesRev2  " + PulsesRev2);
-		*/
-
-		//////////////////////////////////////////////////////
-
-
-		
+			}		
+			else {
+					timer = 0f;
+			}
+		}  
 
 	}
-	
-		//IEnumerator waitMaGueule () {
-				//yield return new WaitForSeconds(5f);
-				//simulatorGOO = true;
-		//}
 
-	public void createRaw0 () { // this function create the string data
+    /// <summary>
+    /// Creates a string command data for the axis 0
+    /// </summary>
+	public void createRaw0 () {
 
 				_axe = 0;
 				PulsesRev = PulsesRev0;  // changement ici  <------------------
@@ -184,10 +131,9 @@ public class ActuatorData : MonoBehaviour {
 			
 	}
 
-	
-
-//////////////// DUPLIQUER POUR LES DEUX AUTRES AXES
-
+    /// <summary>
+    /// Creates a string command data for the axis 1
+    /// </summary>
 	public void createRaw1 () { // this function create the string data
 
 				_axe = 1;
@@ -203,7 +149,10 @@ public class ActuatorData : MonoBehaviour {
 
 	}
 
-	public void createRaw2 () { // this function create the string data
+    /// <summary>
+    /// Creates a string command data for the axis 2
+    /// </summary>
+    public void createRaw2 () { // this function create the string data
 
 				_axe = 2;
 				PulsesRev = PulsesRev2;
@@ -218,63 +167,39 @@ public class ActuatorData : MonoBehaviour {
 
 	}
 
-//////////////////////// FIN DUPLIQUER ////////////////////////////////////////////
 
-		/*public void ouvrirPort (){
-				if (classSerialPort.SerialPort == null)
-				{ classSerialPort.OpenSerialPort(); return; }
+	public void init() {
+		S_GUIManager.OutputString = STX+"0o07000000007A"+ETX;
+		S_GUIManager.sendData ();
+		S_GUIManager.OutputString = STX+"1o070000000079"+ETX;
+		S_GUIManager.sendData ();
+		S_GUIManager.OutputString = STX+"2o070000000078"+ETX;
+		S_GUIManager.sendData ();
 
-				switch (classSerialPort.SerialPort.IsOpen)
-				{
-				case true: classSerialPort.CloseSerialPort(); break;
-				case false: classSerialPort.OpenSerialPort(); break;
-				}
-		
-		}*/
+		initAxiss = false;
+		//simulatorGOO = true;
+	}
 
+    /// <summary>
+    /// Sets the current axis
+    /// </summary>
+	public void setAxis (Axis pAxis) {
 
-		public void init() {
-				//classSerialPort.OpenSerialPort ();
-
-
-
-
-				//setAxe(_Axe);
-				//S_GUIManager.OutputString = initialPositionsAxes[_axe];
-
-				S_GUIManager.OutputString = STX+"0o07000000007A"+ETX;
-				S_GUIManager.sendData ();
-				//yield return new WaitForSeconds(1);
-				S_GUIManager.OutputString = STX+"1o070000000079"+ETX;
-				S_GUIManager.sendData ();
-				//yield return new WaitForSeconds(1);
-				S_GUIManager.OutputString = STX+"2o070000000078"+ETX;
-				S_GUIManager.sendData ();
-
-				initAxes = false;
-				//simulatorGOO = true;
-				//StartCoroutine(waitMaGueule());
-
-		}
-
-
-		public void setAxe (Axe pAxe) {
-
-				switch(pAxe) {
-				case Axe.X:
-						_axe = 0;
-						break;
-				case Axe.Y:
-						_axe = 1;
-						break;
-				case Axe.Z:
-						_axe = 2;
-						break;
-				default :
-						Debug.LogError("Error convert Axe ! - ActuatorData");
-						break;
-				}
-		}
+			switch(pAxis) {
+			case Axis.X:
+					_axe = 0;
+					break;
+			case Axis.Y:
+					_axe = 1;
+					break;
+			case Axis.Z:
+					_axe = 2;
+					break;
+			default :
+					Debug.LogError("Error convert Axis ! - ActuatorData");
+					break;
+			}
+	}
 	
 	public void calculTargetPosition (float pAngle) {
 				int pulses = calculPulsesFromAngle(pAngle);
@@ -298,7 +223,7 @@ public class ActuatorData : MonoBehaviour {
 		return res;
 	}
 
-		public string convertCommand (Command pCommand) {
+	public string convertCommand (Command pCommand) {
 				string command = "";
 				switch(pCommand) {
 				case Command.a:
@@ -315,35 +240,34 @@ public class ActuatorData : MonoBehaviour {
 		}
 
 	private string CalculateChecksum(string dataToCalculate)
+	{
+		byte[] byteToCalculate = Encoding.ASCII.GetBytes(dataToCalculate);
+
+		int checksum = 0;
+
+		foreach (byte chData in byteToCalculate)
 		{
-				byte[] byteToCalculate = Encoding.ASCII.GetBytes(dataToCalculate);
-
-				int checksum = 0;
-
-				foreach (byte chData in byteToCalculate)
-				{
-						checksum += chData;
-				}
-
-				//checksum &= 0xff;
-				checksum = (0x100 - checksum) & 0xff;
-
-				return checksum.ToString("X2");
-
-		} 
-
-		public int calculPulsesFromAngle (float pAngle) {
-
-				return (int)(pAngle/DegreeByPulse);
+				checksum += chData;
 		}
+
+		//checksum &= 0xff;
+		checksum = (0x100 - checksum) & 0xff;
+
+		return checksum.ToString("X2");
+	} 
+
+	public int calculPulsesFromAngle (float pAngle)
+    {
+		return (int)(pAngle/DegreeByPulse);
+	}
 	
-		public string convertPulsesInHEX (int pPulses) {
-
-				int decValue = (int)pPulses;
-				decValue = decValue*(-1);
-				string hexValue = decValue.ToString("X");
-				//Debug.Log("hexvalue --------> "+ hexValue);
-				return hexValue;
-		}
+	public string convertPulsesInHEX (int pPulses)
+    {
+		int decValue = (int)pPulses;
+		decValue = decValue*(-1);
+		string hexValue = decValue.ToString("X");
+		//Debug.Log("hexvalue --------> "+ hexValue);
+		return hexValue;
+	}
 	
 }
